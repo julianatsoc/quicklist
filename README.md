@@ -21,3 +21,10 @@ Este projeto é uma proposta de layout inspirada em um curso da Rocketseat, mas 
 
    ```bash
    git clone https://github.com/julianatsoc/quicklist
+Ou 
+
+## 🌐 Acesse o Projeto
+
+Você pode acessar o projeto diretamente na Vercel:
+
+[Quicklist - Vercel](https://quicklist-zeta.vercel.app/)
