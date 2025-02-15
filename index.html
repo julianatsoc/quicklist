@@ -7,56 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<body class="bg-[#F4F5FB] font-inter">
-  <main class="flex items-center justify-center flex-col max-w-8xl px-4">
-    <header class="mt-8 mb-12 flex items-center justify-center flex-col">
-      <img src="includes/imgs/logo.svg" alt="Logo quicklist" class="w-[300px] h-[80px]">
-    </header>
-    <section class="w-full max-w-[630px]">
-      <h1 class="text-2xl font-bold text-left mb-8">Compras da semana</h1>
-      <form action="" class="mb-8 flex flex-col gap-4 sm:flex-row">
-        <input class="w-full max-w-[450px] p-3 border border-red-500 rounded focus:outline-none focus:ring-2 focus:ring-red-300" 
-               type="text" 
-               name="item" 
-               id="item" 
-               placeholder="Adicione um novo item">
-               <input class="p-3 w-full sm:max-w-[180px] bg-[#C93847] text-white rounded hover:bg-[#C93847] transition-colors cursor-pointer" 
-               type="submit" 
-               value="Adicionar item">
-      </form>
-      <ul class="space-y-4 text-[#1E1E1E]">
-        <li class="flex items-center justify-between bg-white p-4 rounded">
-          <div class="flex items-center">
-            <input type="checkbox" id="item1" class="mr-2">
-            <label for="item1">Pão de forma</label>
-          </div>
-          <img src="includes/imgs/button.svg" width="30" alt="Deletar">
-        </li>
-        <li class="flex items-center justify-between bg-white p-4 rounded">
-          <div class="flex items-center">
-            <input type="checkbox" id="item2" class="mr-2">
-            <label for="item2">Café Santa Clara</label>
-          </div>
-          <img src="includes/imgs/button.svg" width="30" alt="Deletar">
-        </li>
-        <li class="flex items-center justify-between bg-white p-4 rounded">
-          <div class="flex items-center">
-            <input type="checkbox" id="item3" class="mr-2">
-            <label for="item3">Hidratante labial</label>
-          </div>
-          <img src="includes/imgs/button.svg" width="30" alt="Deletar">
-        </li>
-      </ul>
-    </section>
-    <div class="bg-[#C93847] p-4 w-full max-w-[630px] flex flex-row gap-4 rounded mt-4 text-white justify-between items-center">
-      <div class="flex flex-row gap-4 items-center">
-        <img src="includes/imgs/Icon.svg" alt="">
-        <span>O item foi removido da lista</span>
-      </div>
-      <img src="includes/imgs/delete-small.svg" alt="">
-    </div>
-  </main>
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -68,7 +20,36 @@
       }
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#F4F5FB] font-inter">
+  <main class="flex items-center justify-center flex-col max-w-8xl px-4">
+    <header class="mt-8 mb-12 flex items-center justify-center flex-col">
+      <img src="includes/imgs/logo.svg" alt="Logo quicklist" class="w-[300px] h-[80px]">
+    </header>
+    <section class="w-full max-w-[630px]">
+      <h1 class="text-2xl font-bold text-left mb-8">Compras da semana</h1>
+      <form action="" class="mb-8 flex flex-col gap-4 sm:flex-row">
+        <input id="new-item" class="w-full max-w-[450px] p-3 border border-red-500 rounded focus:outline-none focus:ring-2 focus:ring-red-300" 
+               type="text" 
+               name="item" 
+               id="item" 
+               placeholder="Adicione um novo item">
+               <input class="p-3 w-full sm:max-w-[180px] bg-[#C93847] text-white rounded hover:bg-[#C93847] transition-colors cursor-pointer" 
+               type="submit" 
+               value="Adicionar item">
+      </form>
+      <ul class="space-y-4 text-[#1E1E1E] " id="item-list">
+      </ul>
+    </section>
+    <div id="removed" class="bg-[#C93847] p-4 w-full max-w-[630px] flex flex-row gap-4 rounded mt-4 text-white justify-between items-center hidden">
+      <div class="flex flex-row gap-4 items-center">
+        <img src="includes/imgs/Icon.svg" alt="">
+        <span>O item foi removido da lista</span>
+      </div>
+      <img src="includes/imgs/delete-small.svg" alt="">
+    </div>
+  </main>
+  
   <script src="script.js"></script>
 </body>
 </html>
