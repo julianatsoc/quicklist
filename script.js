@@ -16,14 +16,14 @@ function saveItems(items) {
 }
 
 function renderList() {
-    itemList.innerHTML = ""; // Limpa a lista antes de renderizar
+    itemList.innerHTML = "";
 
     getItems().forEach(text => {
         const li = document.createElement("li");
         li.className = "flex items-center justify-between bg-white p-4 rounded";
 
         li.innerHTML = `
-            <div class="flex items-center">
+            <div class="flex items-center id="li-item"">
                 <input type="checkbox" class="mr-2">
                 <label>${text}</label>
             </div>
@@ -32,20 +32,29 @@ function renderList() {
 
         itemList.appendChild(li);
 
+        li.addEventListener("click", () => {
+            const checkbox = li.querySelector("input[type='checkbox']");
+            checkbox.checked = !checkbox.checked;
+            item.checked = checkbox.checked;
+            updateItemCheckedStatus(index, item.checked);
+        });
+
         li.querySelector(".delete-btn").addEventListener("click", () => {
             if (confirm("Deseja mesmo deletar?")) {
                 li.remove();
-    
-                deleteItem.classList.add("block"); // Mostra o elemento
-                deleteItem.classList.remove("hidden"); // Caso tenha 'hidden', remove
-    
-                // Esconde o elemento após 2 segundos
-                setTimeout(() => {
-                    deleteItem.classList.add("hidden"); // Oculta novamente
+                deleteItem.classList.add("block"); 
+                deleteItem.classList.remove("hidden");
+                    setTimeout(() => {
+                    deleteItem.classList.add("hidden");
                 }, 2000);
             }
         });
     });
+}
+function updateItemCheckedStatus(index, isChecked) {
+    let items = getItems();
+    items[index].checked = isChecked;
+    saveItems(items);
 }
 
 function removeItem(text) {
@@ -58,8 +67,7 @@ function removeItem(text) {
 form.onsubmit = (e) => {
     e.preventDefault();
     const text = newItem.value.trim();
-    if (text === "") return; // Evita adicionar itens vazios
-
+    if (text === "") return;
     const li = document.createElement("li");
     li.className = "flex items-center justify-between bg-white p-4 rounded";
 
