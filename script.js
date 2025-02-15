@@ -16,7 +16,7 @@ function saveItems(items) {
 }
 
 function renderList() {
-    itemList.innerHTML = "";
+    itemList.innerHTML = ""; 
 
     getItems().forEach(text => {
         const li = document.createElement("li");
