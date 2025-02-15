@@ -1,0 +1,24 @@
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+input[type="checkbox"] {
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 2px solid #C93847; 
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+input[type="checkbox"]:checked {
+    background-color: #C93847; }
+input[type="checkbox"]:checked::after {
+    content: '\2713';
+    position: absolute;
+    top: -0.3rem;
+    left: 2.8px;
+    font-size: 18px;
+    color: white;
+}

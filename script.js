@@ -3,10 +3,6 @@ const itemList = document.getElementById("item-list");
 const form = document.querySelector("form");
 const deleteItem = document.getElementById("removed");
 
-newItem.addEventListener("input", () => {
-    console.log(newItem.value);
-});
-
 function getItems() {
     return JSON.parse(localStorage.getItem("items")) || [];
 }
@@ -35,6 +31,11 @@ function renderList() {
         li.addEventListener("click", () => {
             const checkbox = li.querySelector("input[type='checkbox']");
             checkbox.checked = !checkbox.checked;
+            if (checkbox.checked) {
+                li.classList.add("completed");
+            } else {
+                li.classList.remove("completed");
+            }
             item.checked = checkbox.checked;
             updateItemCheckedStatus(index, item.checked);
         });
