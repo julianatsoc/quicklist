@@ -2,6 +2,9 @@
 
 Este projeto é uma proposta de layout inspirada em um curso da Rocketseat, mas com toques personalizados. A ideia foi criar uma lista de tarefas simples, onde o usuário pode adicionar e remover itens, com a utilização de Tailwind CSS para praticar e explorar o framework.
 
+![Quicklist interface](https://repository-images.githubusercontent.com/933031418/fd5f4b3a-277c-4f43-a99e-c24d02cf67e5)
+
+
 ## 🚀 Tecnologias Utilizadas
 
 - **HTML**: Estruturação básica da aplicação.
